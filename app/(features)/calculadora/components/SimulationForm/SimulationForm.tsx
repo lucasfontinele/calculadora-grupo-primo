@@ -1,6 +1,11 @@
+'use client';
+
 import { Button } from '@/app/shared/components/Button/Button';
 import { Grid } from '@/app/shared/components/Grid';
-import { TextField } from '@/app/shared/components/TextField';
+import {
+  CurrencyTextField,
+  TextField,
+} from '@/app/shared/components/TextField';
 import Image from 'next/image';
 
 export function SimulationForm() {
@@ -19,12 +24,12 @@ export function SimulationForm() {
           </div>
 
           <div className="flex items-end gap-x-11">
-            <TextField
+            <CurrencyTextField
               placeholder="R$ 0,00"
               label="Investimento inicial"
               name="initialInvestment"
             />
-            <TextField
+            <CurrencyTextField
               placeholder="R$ 0,00"
               label="Investimento mensal"
               name="monthlyInvestment"
@@ -33,6 +38,7 @@ export function SimulationForm() {
               label="Quanto tempo deixaria seu dinheiro investido? (meses)"
               name="period"
               placeholder="12 meses"
+              type="number"
             />
           </div>
 
