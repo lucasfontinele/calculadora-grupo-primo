@@ -1,11 +1,9 @@
-import { Grid } from '@/app/shared/components/Grid';
+import { Hero } from './components/Hero';
 
 function CalculatorPage() {
   return (
     <div className="flex flex-col h-screen w-full">
-      <Grid>
-        <h1>Calculadora</h1>
-      </Grid>
+      <Hero />
     </div>
   );
 }
