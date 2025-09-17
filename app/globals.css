@@ -11,6 +11,7 @@
   --content-inverse-secondary: #bfbdb6;
   --content-primary: #21211f;
   --content-secondary: #595855;
+  --background-accent: #33e5b0;
 }
 
 @theme inline {
@@ -24,6 +25,7 @@
   --color-inverse-secondary: var(--content-inverse-secondary);
   --color-content-primary: var(--content-primary);
   --color-content-secondary: var(--content-secondary);
+  --color-background-accent: var(--background-accent);
   --font-sans: var(--font-inter);
 }
 
