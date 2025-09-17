@@ -4,21 +4,31 @@
   --background: #ffffff;
   --foreground: #0b0b0b;
   --primary-gray: #eeeeee;
+  --secondary-gray: #bebebe;
+  --tertiary-gray: #f6f6f6;
+  --neutral-gray: #dddce0;
   --content-inverse-primary: #fffffc;
   --content-inverse-secondary: #bfbdb6;
+  --content-primary: #21211f;
+  --content-secondary: #595855;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary-gray: var(--primary-gray);
+  --color-secondary-gray: var(--secondary-gray);
+  --color-tertiary-gray: var(--tertiary-gray);
+  --color-neutral-gray: var(--neutral-gray);
   --color-inverse-primary: var(--content-inverse-primary);
   --color-inverse-secondary: var(--content-inverse-secondary);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-content-primary: var(--content-primary);
+  --color-content-secondary: var(--content-secondary);
+  --font-sans: var(--font-inter);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-sans);
 }
