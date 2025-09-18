@@ -4,7 +4,7 @@ export function TextField({ label, name, ...props }: TextFieldProps) {
   return (
     <div className="flex flex-col gap-y-3 w-full font-sans">
       <label
-        className="text-content-secondary font-sans text-xl"
+        className="text-content-secondary font-sans text-xl max-lg:text-base"
         htmlFor={name}
       >
         {label}
@@ -12,7 +12,7 @@ export function TextField({ label, name, ...props }: TextFieldProps) {
       <input
         id={name}
         name={name}
-        className="w-full border border-neutral-gray bg-white rounded-xl px-4 py-7 font-sans text-lg placeholder:text-secondary-gray text-content-primary"
+        className="w-full border border-neutral-gray bg-white rounded-xl px-4 py-7 max-lg:py-6 font-sans text-lg placeholder:text-secondary-gray text-content-primary max-lg:text-sm"
         {...props}
       />
     </div>
