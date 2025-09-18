@@ -5,7 +5,7 @@ const ARCA_RATE = 0.18;
 const SELIC_RATE = 0.0925;
 const WORKING_DAYS_PER_MONTH = 21;
 
-const calculateRentability = (
+const calculateProfitability = (
   initialInvestment: number,
   monthlyInvestment: number,
   period: number,
@@ -41,14 +41,14 @@ export async function GET(request: Request) {
     return Response.json({ error: 'Missing params' }, { status: 400 });
   }
 
-  const arcaTotal = calculateRentability(
+  const arcaTotal = calculateProfitability(
     initialInvestment,
     monthlyInvestment,
     period,
     ARCA_RATE,
   );
 
-  const selicTotal = calculateRentability(
+  const selicTotal = calculateProfitability(
     initialInvestment,
     monthlyInvestment,
     period,
@@ -68,7 +68,7 @@ export async function GET(request: Request) {
       arca: ARCA_RATE,
       selic: SELIC_RATE,
     },
-    arcaRentability: formatCurrency(arcaTotal),
-    selicRentability: formatCurrency(selicTotal),
+    arcaProfitability: formatCurrency(arcaTotal),
+    selicProfitability: formatCurrency(selicTotal),
   });
 }

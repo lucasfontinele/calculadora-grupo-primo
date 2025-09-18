@@ -11,7 +11,10 @@
   --content-inverse-secondary: #bfbdb6;
   --content-primary: #21211f;
   --content-secondary: #595855;
+  --content-tertiary: #3a3a3a;
   --background-accent: #33e5b0;
+  --border-opaque: #bfbdb6;
+  --text-gray: #6a6a6a;
 }
 
 @theme inline {
@@ -25,8 +28,13 @@
   --color-inverse-secondary: var(--content-inverse-secondary);
   --color-content-primary: var(--content-primary);
   --color-content-secondary: var(--content-secondary);
+  --color-content-tertiary: var(--content-tertiary);
   --color-background-accent: var(--background-accent);
+  --color-border-opaque: var(--border-opaque);
   --font-sans: var(--font-inter);
+  --font-raleway: var(--font-raleway);
+  --font-open-sans: var(--font-open-sans);
+  --text-gray: var(--text-gray);
 }
 
 body {
