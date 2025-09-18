@@ -1,7 +1,14 @@
 import { Grid } from '@/app/shared/components/Grid';
 import Image from 'next/image';
+import { SimulationDisplayProps } from '@/app/(features)/resultado/types/SimulationDisplay.types';
 
-export function SimulationDisplay() {
+export async function SimulationDisplay({
+  period,
+  selicRate,
+  arcaRate,
+  selicProfitability,
+  arcaProfitability,
+}: SimulationDisplayProps) {
   return (
     <div className="w-full">
       <Grid className="max-lg:px-0 max-md:px-0">
@@ -12,7 +19,7 @@ export function SimulationDisplay() {
 
           <div className="flex flex-col gap-y-4 mt-10 max-lg:mt-0">
             <h4 className="font-sans font-semibold text-content-tertiary text-[32px] max-lg:text-lg">
-              Em 24 meses você teria:
+              Em {period} {period > 1 ? 'meses' : 'mês'} você teria:
             </h4>
 
             <div className="bg-white rounded-3xl border-border-opaque border p-8 flex flex-col gap-y-4">
@@ -21,7 +28,7 @@ export function SimulationDisplay() {
               </small>
 
               <strong className="font-semibold font-sans text-[88px] text-content-primary leading-none max-lg:text-[32px]">
-                R$ 538,00
+                {selicProfitability}
               </strong>
             </div>
 
@@ -39,7 +46,7 @@ export function SimulationDisplay() {
               </small>
 
               <strong className="font-semibold font-sans text-[88px] text-content-primary leading-none max-lg:text-[32px]">
-                R$ 1.0020,00
+                {arcaProfitability}
               </strong>
             </div>
           </div>
@@ -51,7 +58,7 @@ export function SimulationDisplay() {
               <span className="flex items-center gap-x-4 uppercase text-base tracking-[5.12px] text-content-secondary font-semibold font-raleway">
                 TAXA SELIC:
                 <b className="text-content-primary text-2xl font-open-sans font-extrabold tracking-normal">
-                  9,25%
+                  {selicRate}
                 </b>
               </span>
             </div>
@@ -60,7 +67,7 @@ export function SimulationDisplay() {
               <span className="flex items-center gap-x-4 uppercase text-base tracking-[5.12px] text-content-secondary font-semibold font-raleway max-lg:flex-col max-lg:items-start max-lg:gap-y-4">
                 RENTABILIDADE DA ARCA:
                 <b className="text-content-primary text-2xl font-open-sans font-extrabold tracking-normal normal-case">
-                  18% a.a
+                  {arcaRate}
                 </b>
               </span>
             </div>

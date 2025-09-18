@@ -62,11 +62,15 @@ export async function GET(request: Request) {
     }).format(value);
   };
 
+  const formatPercentage = (value: number) => {
+    return `${(value * 100).toFixed(2)}%`.replace('.', ',');
+  };
+
   return Response.json({
     period,
     rates: {
-      arca: ARCA_RATE,
-      selic: SELIC_RATE,
+      arca: formatPercentage(ARCA_RATE),
+      selic: formatPercentage(SELIC_RATE),
     },
     arcaProfitability: formatCurrency(arcaTotal),
     selicProfitability: formatCurrency(selicTotal),

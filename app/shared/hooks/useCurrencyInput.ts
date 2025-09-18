@@ -15,7 +15,8 @@ export function useCurrencyInput(initialValue: string = '') {
 
   const getNumericValue = useCallback((): number => {
     const numericString = value.replace(/[^\d]/g, '');
-    return numericString ? parseInt(numericString, 10) / 100 : 0;
+
+    return numericString ? parseInt(numericString, 10) / 10 : 0;
   }, [value]);
 
   return {

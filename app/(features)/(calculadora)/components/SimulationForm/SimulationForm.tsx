@@ -11,10 +11,13 @@ import { useSimulationForm } from '@/app/(features)/(calculadora)/hooks/useSimul
 import { Controller } from 'react-hook-form';
 
 export function SimulationForm() {
-  const { form, isDisabled } = useSimulationForm();
+  const { form, isDisabled, handleSubmit } = useSimulationForm();
 
   return (
-    <form className="w-full py-20 max-lg:py-8">
+    <form
+      className="w-full py-20 max-lg:py-8"
+      onSubmit={form.handleSubmit(handleSubmit)}
+    >
       <Grid>
         <div className="bg-tertiary-gray w-full p-14 rounded-2xl flex flex-col gap-y-[88px] max-lg:gap-y-12 max-lg:px-6 max-lg:py-8">
           <div className="flex flex-col gap-y-[22px]">

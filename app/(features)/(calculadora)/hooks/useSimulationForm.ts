@@ -2,6 +2,9 @@ import { useForm } from 'react-hook-form';
 import { SimulationFormProps } from '@/app/(features)/(calculadora)/types/UseSimulationForm.types';
 import { zodResolver } from '@hookform/resolvers/zod';
 import zod from 'zod';
+import { useCallback } from 'react';
+import { useRouter } from 'next/navigation';
+import { ROUTES } from '@/app/shared/constants/links';
 
 const schema = zod.object({
   initialInvestment: zod.number().min(0),
@@ -14,6 +17,7 @@ const schema = zod.object({
 });
 
 export function useSimulationForm() {
+  const router = useRouter();
   const form = useForm<SimulationFormProps>({
     resolver: zodResolver(schema),
     mode: 'onChange',
@@ -29,5 +33,11 @@ export function useSimulationForm() {
     !form.formState.isValid ||
     form.watch('period') === '';
 
-  return { form, isDisabled };
+  const handleSubmit = useCallback((props: SimulationFormProps) => {
+    router.push(
+      `${ROUTES.RESULT}?initialInvestment=${props.initialInvestment}&monthlyInvestment=${props.monthlyInvestment}&period=${props.period}`,
+    );
+  }, []);
+
+  return { form, isDisabled, handleSubmit };
 }
