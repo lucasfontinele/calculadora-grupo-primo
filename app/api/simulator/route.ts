@@ -1,6 +1,3 @@
-// A fórmula para o cálculo da rentabilidade é
-// M = P . (1 + i) ^ t/252, onde M é o montante final, P é o principal, i é a taxa de rendimento e t é o prazo em dias úteis.
-
 const ARCA_RATE = 0.18;
 const SELIC_RATE = 0.0925;
 const WORKING_DAYS_PER_MONTH = 21;
