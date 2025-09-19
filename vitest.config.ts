@@ -12,4 +12,7 @@ export default defineConfig({
       '@': resolve(__dirname, './'),
     },
   },
+  esbuild: {
+    jsx: 'automatic',
+  },
 })
